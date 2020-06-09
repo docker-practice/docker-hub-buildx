@@ -1,3 +1,3 @@
 # syntax=docker/dockerfile:experimental
 
-FROM alpine
+FROM --platform=$TARGETPLATFORM alpine
