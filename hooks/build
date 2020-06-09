@@ -8,4 +8,4 @@ docker buildx create --use --name=mybuilder --driver docker-container
 
 docker buildx ls
 
-docker buildx build -f $DOCKERFILE_PATH -t $IMAGE_NAME --platform linux/amd64,linux/arm64 .
+docker buildx build --push -f $DOCKERFILE_PATH -t $IMAGE_NAME --platform linux/amd64,linux/arm64 .
