@@ -1,0 +1,11 @@
+#!/bin/bash
+
+export DOCKER_CLI_EXPERIMENTAL=enabled
+
+docker buildx version
+
+docker buildx create --use --name=mybuilder --driver docker-container
+
+docker buildx ls
+
+docker buildx build -f $DOCKERFILE_PATH -t $IMAGE_NAME --platform linux/amd64,linux/arm64 .
